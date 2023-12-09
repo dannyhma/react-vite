@@ -2,16 +2,9 @@ import { IconBrandFacebook, IconBrandTwitter } from "@tabler/icons-react";
 import Button from "./components/Button";
 import Card from "./components/Card";
 import PlaceContentCenter from "./components/PlaceContentCenter";
-import { useState } from "react";
+import Count from "./components/Count";
 
 function App() {
-	const [count, setCount] = useState(0);
-
-	function handleClick() {
-		const nextCount = count + 1;
-		setCount(nextCount);
-	}
-
 	return (
 		<>
 			<section className="container mx-auto">
@@ -90,14 +83,10 @@ function App() {
 				</div>
 			</section>
 			<section className="container mx-auto">
-				<div className="mt-16">
-					<PlaceContentCenter>
-						<div className="mb-5 text-5xl font-bold text-violet-50">{count}</div>
-						<Button onClick={handleClick} className="bg-Facebook">
-							Count
-						</Button>
-					</PlaceContentCenter>
-				</div>
+				<PlaceContentCenter>
+					<h1 className="mb-5 text-center text-4xl">Counting:</h1>
+					<Count initialValue={10} />
+				</PlaceContentCenter>
 			</section>
 		</>
 	);
