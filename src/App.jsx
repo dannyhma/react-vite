@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
 import { IconBrandFacebook, IconBrandTwitter } from "@tabler/icons-react";
-import clsx from "clsx";
+import Button from "./components/Button";
+import Card from "./components/Card";
 
-export default function App() {
+function App() {
 	return (
 		<>
 			<section className="container mx-auto">
@@ -35,23 +35,53 @@ export default function App() {
 					</div>
 				</div>
 			</section>
+			<section className="container mx-auto">
+				<div className="min-h-screen bg-slate-100 tracking-tight text-slate-800 antialiased">
+					<div className="grid grid-cols-12 gap-4">
+						<div className="col-span-4">
+							<Card>
+								<Card.Title>Hello React</Card.Title>
+								<Card.Body>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae a harum in eum
+									adipisci, ipsam autem aut quisquam maiores reprehenderit cumque laudantium
+									doloribus nostrum libero, ducimus praesentium ab. Necessitatibus, impedit?
+								</Card.Body>
+								<Card.Footer>
+									<Button>Register</Button>
+								</Card.Footer>
+							</Card>
+						</div>
+						<div className="col-span-4">
+							<Card>
+								<Card.Title>Hello React</Card.Title>
+								<Card.Body>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae a harum in eum
+									adipisci, ipsam autem aut quisquam maiores reprehenderit cumque laudantium
+									doloribus nostrum libero, ducimus praesentium ab. Necessitatibus, impedit?
+								</Card.Body>
+								<Card.Footer>
+									<Button>Register</Button>
+								</Card.Footer>
+							</Card>
+						</div>
+						<div className="col-span-4">
+							<Card>
+								<Card.Title>Hello React</Card.Title>
+								<Card.Body>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae a harum in eum
+									adipisci, ipsam autem aut quisquam maiores reprehenderit cumque laudantium
+									doloribus nostrum libero, ducimus praesentium ab. Necessitatibus, impedit?
+								</Card.Body>
+								<Card.Footer>
+									<Button>Register</Button>
+								</Card.Footer>
+							</Card>
+						</div>
+					</div>
+				</div>
+			</section>
 		</>
 	);
 }
 
-export function Button(props) {
-	const { className = "bg-Tw", children, text, type = "submit" } = props;
-
-	return (
-		<button
-			{...props}
-			type={type}
-			className={clsx(
-				className,
-				"${className} flex gap-x-2 rounded-full px-10 py-4 text-sm font-bold text-white shadow-smshadow [&>svg]:h-5 [&>svg]:w-5 [&>svg]:stroke-1"
-			)}
-		>
-			{text || children}
-		</button>
-	);
-}
+export default App;
