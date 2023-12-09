@@ -37,7 +37,7 @@ function App() {
 					</div>
 				</div>
 			</section>
-			<section className="container mx-auto">
+			<section className="container mx-auto mb-16">
 				<div className="h-full tracking-tight text-slate-800 antialiased">
 					<div className="grid grid-cols-12 gap-4">
 						<div className="col-span-4">
