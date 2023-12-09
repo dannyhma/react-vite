@@ -55,7 +55,7 @@ function App() {
 						</div>
 						<div className="col-span-4">
 							<Card>
-								<Card.Title>Hello React</Card.Title>
+								<Card.Title>Hello Vue</Card.Title>
 								<Card.Body>
 									Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae a harum in eum
 									adipisci, ipsam autem aut quisquam maiores reprehenderit cumque laudantium
@@ -68,7 +68,7 @@ function App() {
 						</div>
 						<div className="col-span-4">
 							<Card>
-								<Card.Title>Hello React</Card.Title>
+								<Card.Title>Hello Express</Card.Title>
 								<Card.Body>
 									Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae a harum in eum
 									adipisci, ipsam autem aut quisquam maiores reprehenderit cumque laudantium
