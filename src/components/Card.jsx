@@ -1,27 +1,60 @@
 import PropTypes from "prop-types";
+import clsx from "clsx";
 
 const childrenPropTypes = {
-	children: PropTypes.node
+	children: PropTypes.node,
+	className: PropTypes.node
 };
 
-function Card({ children }) {
-	return <div className="overflow-hidden rounded-lg bg-white shadow-cardshadow">{children}</div>;
-}
+function Card(props) {
+	const { className = "bg-white", children } = props;
 
-function Title({ children }) {
 	return (
-		<div className="border-b p-4">
-			<h1 className="text-2xl">{children}</h1>
-		</div>
+		<>
+			<div
+				{...props}
+				className={clsx(className, "${className} overflow-hidden rounded-lg shadow-cardshadow")}
+			>
+				{children}
+			</div>
+		</>
 	);
 }
 
-function Body({ children }) {
-	return <h1 className="p-4 text-justify leading-relaxed">{children}</h1>;
+function Title(props) {
+	const { className = "text-slate-800 p-4", children } = props;
+	return (
+		<>
+			<div className="border-b">
+				<h1 {...props} className={clsx(className, "${className} text-2xl")}>
+					{children}
+				</h1>
+			</div>
+		</>
+	);
 }
 
-function Footer({ children }) {
-	return <h1 className="p-4">{children}</h1>;
+function Body(props) {
+	const { className = "p-4", children } = props;
+	return (
+		<>
+			<h1 {...props} className={clsx(className, "${className} text-justify leading-relaxed")}>
+				{children}
+			</h1>
+		</>
+	);
+}
+
+function Footer(props) {
+	const { className = "p-4", children } = props;
+
+	return (
+		<>
+			<h1 {...props} className={clsx(className, "${className}")}>
+				{children}
+			</h1>
+		</>
+	);
 }
 
 Card.Title = Title;

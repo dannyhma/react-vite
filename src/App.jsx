@@ -1,10 +1,32 @@
-import { IconBrandFacebook, IconBrandTwitter } from "@tabler/icons-react";
+import { useState } from "react";
+import { IconBrandFacebook, IconBrandGoogle, IconBrandTwitter } from "@tabler/icons-react";
 import Button from "./components/Button";
 import Card from "./components/Card";
 import PlaceContentCenter from "./components/PlaceContentCenter";
 import Count from "./components/Count";
+import Input from "./components/Input";
+import Label from "./components/Label";
 
 function App() {
+	const [form, setForm] = useState({
+		name: "",
+		email: ""
+	});
+
+	function onChange(event) {
+		setForm({
+			...form,
+			[event.target.name]: event.target.value
+		});
+	}
+
+	function submit(event) {
+		event.preventDefault();
+
+		console.log("Mama aku disubmit");
+		console.log(form);
+	}
+
 	return (
 		<>
 			<section className="container mx-auto">
@@ -19,7 +41,7 @@ function App() {
 										console.log("Register");
 									}
 								}}
-								className="bg-Twitter"
+								className="bg-Twitter text-white"
 							>
 								<IconBrandTwitter />
 								Register
@@ -28,7 +50,6 @@ function App() {
 								onClick={function () {
 									console.log("Login");
 								}}
-								className="bg-Facebook"
 							>
 								<IconBrandFacebook />
 								Login
@@ -83,9 +104,46 @@ function App() {
 				</div>
 			</section>
 			<section className="container mx-auto">
-				<PlaceContentCenter>
-					<h1 className="mb-5 text-center text-4xl">Counting:</h1>
+				<PlaceContentCenter className="bg-gray-700">
+					<h1 className="mb-5 text-center text-4xl text-violet-50">Counting:</h1>
 					<Count initialValue={10} />
+				</PlaceContentCenter>
+			</section>
+			<section className="container mx-auto">
+				<PlaceContentCenter className="flex items-center justify-center bg-gray-700 text-center">
+					<Card className="w-96 bg-white">
+						<Card.Title className="p-4 text-Dark">Sign up for new account</Card.Title>
+						<form onSubmit={submit}>
+							<Card.Body className="p-6">
+								<div className="mb-5 rounded-lg border border-slate-300 p-4 text-slate-800 ">
+									<p>Name : {form.name}</p>
+									<p>Email : {form.email}</p>
+								</div>
+
+								<div className="mb-4 text-Twitter">
+									<Label htmlFor="name" value="Username :" />
+									<Input onChange={onChange} value={form.name} name="name" id="name" />
+								</div>
+
+								<div className="text-Twitter">
+									<Label htmlFor="email" value="Eassword :" />
+									<Input
+										onChange={onChange}
+										value={form.email}
+										type="email"
+										name="email"
+										id="email"
+									/>
+								</div>
+							</Card.Body>
+							<Card.Footer className="flex justify-center pb-6">
+								<Button className="bg-Twitter text-violet-50">
+									<IconBrandGoogle />
+									Register
+								</Button>
+							</Card.Footer>
+						</form>
+					</Card>
 				</PlaceContentCenter>
 			</section>
 		</>

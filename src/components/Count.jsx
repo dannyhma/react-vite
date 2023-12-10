@@ -7,14 +7,14 @@ export default function Count({ initialValue }) {
 
 	return (
 		<>
-			<div className="text-center">
+			<div className="text-center ">
 				<div className="mb-5 text-6xl font-bold text-violet-50">{count}</div>
-				<div className="flex justify-center gap-4">
+				<div className="flex items-center justify-center gap-4	">
 					<Button
 						onClick={function () {
 							setCount(count - 1);
 						}}
-						className="bg-Facebook"
+						className="bg-white text-2xl text-Twitter"
 					>
 						-
 					</Button>
@@ -22,7 +22,7 @@ export default function Count({ initialValue }) {
 						onClick={function () {
 							setCount(count + 1);
 						}}
-						className="bg-Facebook"
+						className="bg-white text-2xl text-Twitter"
 					>
 						+
 					</Button>

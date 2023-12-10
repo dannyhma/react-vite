@@ -1,17 +1,22 @@
 import PropTypes from "prop-types";
+import clsx from "clsx";
 
-export default function PlaceContentCenter({ children }) {
+export default function PlaceContentCenter(props) {
+	const { className = "bg-gray-700 text-violet-50 ", children } = props;
+
 	return (
 		<>
-			<div className="bg-black">
-				<div className="min-h-screnn tracking-tigh flex items-center justify-center bg-violet-900/20 p-8 text-violet-50 antialiased">
-					<div className="w-full">{children}</div>
-				</div>
+			<div
+				{...props}
+				className={clsx(className, "${className} tracking-tigh p-8 antialiased")}
+			>
+				{children}
 			</div>
 		</>
 	);
 }
 
 PlaceContentCenter.propTypes = {
-	children: PropTypes.node
+	children: PropTypes.node,
+	className: PropTypes.node
 };
