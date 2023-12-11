@@ -29,9 +29,8 @@ export default function TodoList() {
 
 		if (edit.id) {
 			const updateTask = {
-				id: edit.id,
-				newTask,
-				completed: false
+				...edit,
+				newTask
 			};
 
 			const editTaskIndex = tasks.findIndex(function (task) {
@@ -50,7 +49,8 @@ export default function TodoList() {
 			...tasks,
 			{
 				id: newUuid,
-				newTask
+				newTask,
+				completed: false
 			}
 		]);
 		setNewTask("");
