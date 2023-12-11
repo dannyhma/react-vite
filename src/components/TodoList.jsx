@@ -86,6 +86,8 @@ export default function TodoList() {
 			return task;
 		});
 
+		setMessage("");
+		setNewTask("");
 		setTasks(updateTask);
 	}
 
