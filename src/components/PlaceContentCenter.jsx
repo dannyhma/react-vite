@@ -2,13 +2,13 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 
 export default function PlaceContentCenter(props) {
-	const { className = "bg-gray-700 text-violet-50 ", children } = props;
+	const { className = "bg-gray-700", children } = props;
 
 	return (
 		<>
 			<div
 				{...props}
-				className={clsx(className, "${className} tracking-tigh p-8 antialiased")}
+				className={clsx(className, "tracking-tigh p-8 antialiased")}
 			>
 				{children}
 			</div>

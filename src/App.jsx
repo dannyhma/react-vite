@@ -6,6 +6,8 @@ import PlaceContentCenter from "./components/PlaceContentCenter";
 import Count from "./components/Count";
 import Input from "./components/Input";
 import Label from "./components/Label";
+import Todo from "./components/Todo";
+import TodoList from "./components/TodoList";
 
 function App() {
 	const [form, setForm] = useState({
@@ -23,17 +25,17 @@ function App() {
 	function submit(event) {
 		event.preventDefault();
 
-		console.log("Mama aku disubmit");
+		console.log("AKU DI SUBMIT");
 		console.log(form);
 	}
 
 	return (
 		<>
 			<section className="container mx-auto">
-				<div className="grid h-32 grid-cols-12">
-					<h1 className="col-span-9 m-10 text-2xl text-Purple">Learn react</h1>
-					<div className="col-span-3 m-10">
-						<div className="flex justify-center gap-x-2">
+				<div className="grid h-32 grid-cols-12 overflow-hidden">
+					<h1 className="col-span-6 m-10 text-2xl text-Purple">Learn react</h1>
+					<div className="col-span-6 m-10">
+						<div className="flex justify-end gap-x-2">
 							<Button
 								{...{
 									type: "button",
@@ -144,6 +146,16 @@ function App() {
 							</Card.Footer>
 						</form>
 					</Card>
+				</PlaceContentCenter>
+			</section>
+			<section className="container mx-auto">
+				<PlaceContentCenter className="flex items-center justify-center bg-gray-700 text-center">
+					<Todo></Todo>
+				</PlaceContentCenter>
+			</section>
+			<section className="container mx-auto">
+				<PlaceContentCenter className="flex items-center justify-center bg-gray-700 text-center">
+					<TodoList></TodoList>
 				</PlaceContentCenter>
 			</section>
 		</>

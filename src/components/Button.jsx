@@ -11,7 +11,7 @@ export default function Button(props) {
 				type={type}
 				className={clsx(
 					className,
-					"${className} flex gap-x-2 rounded-full px-10 py-4 text-sm font-bold shadow-smshadow [&>svg]:h-5 [&>svg]:w-5 [&>svg]:stroke-1"
+					"inline-flex gap-x-2 rounded-lg px-10 h-10 justify-center items-center text-base whitespace-nowrap font-bold shadow-smshadow [&>svg]:h-5 [&>svg]:w-5 [&>svg]:stroke-1"
 				)}
 			>
 				{text || children}

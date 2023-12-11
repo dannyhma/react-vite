@@ -13,7 +13,7 @@ function Card(props) {
 		<>
 			<div
 				{...props}
-				className={clsx(className, "${className} overflow-hidden rounded-lg shadow-cardshadow")}
+				className={clsx(className, "overflow-hidden rounded-lg shadow-cardshadow")}
 			>
 				{children}
 			</div>
@@ -26,7 +26,7 @@ function Title(props) {
 	return (
 		<>
 			<div className="border-b">
-				<h1 {...props} className={clsx(className, "${className} text-2xl")}>
+				<h1 {...props} className={clsx(className, "text-2xl")}>
 					{children}
 				</h1>
 			</div>
@@ -38,7 +38,7 @@ function Body(props) {
 	const { className = "p-4", children } = props;
 	return (
 		<>
-			<h1 {...props} className={clsx(className, "${className} text-justify leading-relaxed")}>
+			<h1 {...props} className={clsx(className, "text-justify leading-relaxed")}>
 				{children}
 			</h1>
 		</>
@@ -50,7 +50,7 @@ function Footer(props) {
 
 	return (
 		<>
-			<h1 {...props} className={clsx(className, "${className}")}>
+			<h1 {...props} className={clsx(className, "")}>
 				{children}
 			</h1>
 		</>

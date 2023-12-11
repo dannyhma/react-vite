@@ -11,7 +11,7 @@ export default function Input(props) {
 				type={type}
 				className={clsx(
 					className,
-					"${className} w-full rounded-lg shadow-sm transition duration-300 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-200"
+					"w-full rounded-lg shadow-sm transition duration-300 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-200"
 				)}
 			/>
 		</>
