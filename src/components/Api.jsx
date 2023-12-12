@@ -10,8 +10,7 @@ function Api() {
 		async function getUsers() {
 			setLoading(true);
 			try {
-				const { data } = await axios("https://jsonplaceholder.typicode.com/users");
-				console.log(data);
+				const { data } = await axios(`https://jsonplaceholder.typicode.com/users`);
 				setUsers(data);
 				setLoading(false);
 			} catch (error) {

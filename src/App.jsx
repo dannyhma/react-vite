@@ -9,6 +9,7 @@ import Label from "./components/Label";
 import Todo from "./components/Todo";
 import TodoList from "./components/TodoList";
 import Api from "./components/Api";
+import Joke from "./components/Joke";
 
 function App() {
 	const [form, setForm] = useState({
@@ -184,6 +185,11 @@ function App() {
 			<section className="container mx-auto">
 				<PlaceContentCenter className="flex items-center justify-center	bg-blue-900 text-center">
 					<Api></Api>
+				</PlaceContentCenter>
+			</section>
+			<section className="container mx-auto">
+				<PlaceContentCenter className="flex items-center justify-center	bg-blue-900 text-center">
+					<Joke></Joke>
 				</PlaceContentCenter>
 			</section>
 		</>
