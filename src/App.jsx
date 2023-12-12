@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { IconBrandFacebook, IconBrandGoogle, IconBrandTwitter } from "@tabler/icons-react";
 import Button from "./components/Button";
 import Card from "./components/Card";
@@ -8,12 +8,17 @@ import Input from "./components/Input";
 import Label from "./components/Label";
 import Todo from "./components/Todo";
 import TodoList from "./components/TodoList";
+import Api from "./components/Api";
 
 function App() {
 	const [form, setForm] = useState({
 		name: "",
 		email: ""
 	});
+
+	// const [tick, setTick] = useState(0);
+
+	const tick = useRef(null);
 
 	function onChange(event) {
 		setForm({
@@ -27,6 +32,13 @@ function App() {
 
 		console.log("AKU DI SUBMIT");
 		console.log(form);
+	}
+
+	function handleClick() {
+		// const nextTick = tick + 1;
+		// setTick(nextTick);
+		tick.current = tick.current + 1;
+		console.log(tick.current);
 	}
 
 	return (
@@ -156,6 +168,22 @@ function App() {
 			<section className="container mx-auto">
 				<PlaceContentCenter className="flex items-center justify-center bg-gray-700 text-center">
 					<TodoList></TodoList>
+				</PlaceContentCenter>
+			</section>
+			<section className="container mx-auto">
+				<PlaceContentCenter className="flex items-center justify-center	bg-blue-900 text-center">
+					<Card className="w-96 bg-white">
+						<Card.Title>useRef Hooks</Card.Title>
+						<Card.Body>
+							<Button onClick={handleClick}>Tick</Button>
+						</Card.Body>
+						<Card.Footer>You clicked {tick.current} times.</Card.Footer>
+					</Card>
+				</PlaceContentCenter>
+			</section>
+			<section className="container mx-auto">
+				<PlaceContentCenter className="flex items-center justify-center	bg-blue-900 text-center">
+					<Api></Api>
 				</PlaceContentCenter>
 			</section>
 		</>
